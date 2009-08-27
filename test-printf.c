@@ -11,12 +11,16 @@ main(int argc, char *argv[]) {
 		printf("Error on printf 1!\n");
 	}
 
-	if (printf("Contract code right: [%20.20c]\n", cc) < 0) {
+	if (printf("Speed is [%09.9d]\n", (int)round(i * 100)) < 0) {
 		printf("Error on printf 2!\n");
 	}
 
+	if (printf("Contract code right: [%20.20c]\n", cc) < 0) {
+		printf("Error on printf 3!\n");
+	}
+
 	if (printf("Contract code left: [%-20.20c]\n", cc) < 0) {
-		printf("Error on printf 2!\n");
+		printf("Error on printf 4!\n");
 	}
 
 	return 0;

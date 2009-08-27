@@ -10,7 +10,12 @@ CFLAGS = -O3
 LIBOBJC = -l objc
 LIBCPP = -l stdc++
 
-all: test-objc test-c test-printf test-mem test-macro
+all: test-c \
+     test-objc \
+     test-printf \
+     test-mem \
+     test-macro \
+     test-scanf
 
 test-objc: test-objc.o
 	$(CC) $(CFLAGS) $(?) -o $(@) $(LIBOBJC)
@@ -40,6 +45,12 @@ test-macro: test-macro.o
 	$(CC) $(CFLAGS) $(?) -o $(@)
 
 test-macro.o: test-macro.c
+	$(CC) $(CFLAGS) -c $(?) -o $(@)
+
+test-scanf: test-scanf.o
+	$(CC) $(CFLAGS) $(?) -o $(@)
+
+test-scanf.o: test-scanf.c
 	$(CC) $(CFLAGS) -c $(?) -o $(@)
 
 clean:

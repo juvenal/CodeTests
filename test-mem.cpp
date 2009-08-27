@@ -5,9 +5,14 @@
 int main(int argc, char *argv[]) {
 	char *s1, *s2;
 
-	s1 = new char(10);
+	s1 = new char(128);
+	s2 = new char(128);
 
-	std::cout << s1 << std::endl;
+	strcpy(s1, "It's a brave new ");
+	strcpy(s2, "world!");
+
+	std::cout << s1 << s2 << std::endl;
+	std::cout << s2 << std::endl;
 
 	return 0;
 }
