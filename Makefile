@@ -20,7 +20,7 @@ all: test-c \
      test-multithread.c
 
 test-multithread: test-multithread.o
-	$(CC) $(CFLAGS) $(?) -o $(@) $(LIBOBJC) $(LIBSTDC)
+	$(CC) $(CFLAGS) $(?) -o $(@) $(LIBSTDC)
 
 test-multithread.o: test-multithread.c
 	$(CC) $(CFLAGS) -c $(?) -o $(@)
