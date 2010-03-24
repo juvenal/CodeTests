@@ -6,7 +6,7 @@
 #
 
 CC = gcc
-CFLAGS = -O3
+CFLAGS = -O3 -Wall
 LIBSTDC = -l m
 LIBOBJC = -l objc
 LIBCPP = -l stdc++
@@ -55,7 +55,7 @@ test-scanf.o: test-scanf.c
 	$(CC) $(CFLAGS) -c $(?) -o $(@)
 
 clean:
-	rm -rf *.o test-*.exe
+	@rm -rf *.o *.exe test-c test-objc test-printf test-mem test-macro test-scanf
 
 cleano:
-	rm -rf *.o
+	@rm -rf *.o

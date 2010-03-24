@@ -1,3 +1,9 @@
+/*
+ *
+ *
+ *
+ */
+
 #import <objc/Object.h>
 
 @interface MyClass: Object
