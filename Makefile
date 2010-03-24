@@ -16,7 +16,14 @@ all: test-c \
      test-printf \
      test-mem \
      test-macro \
-     test-scanf
+     test-scanf \
+     test-multithread.c
+
+test-multithread: test-multithread.o
+	$(CC) $(CFLAGS) $(?) -o $(@) $(LIBSTDC)
+
+test-multithread.o: test-multithread.c
+	$(CC) $(CFLAGS) -c $(?) -o $(@)
 
 test-objc: test-objc.o
 	$(CC) $(CFLAGS) $(?) -o $(@) $(LIBOBJC) $(LIBSTDC)
