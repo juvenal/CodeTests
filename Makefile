@@ -7,7 +7,7 @@
 
 CC = gcc
 CFLAGS = -O3 -Wall
-LIBSTDC = -l m
+LIBSTDC = -l m -l pthread
 LIBOBJC = -l objc
 LIBCPP = -l stdc++
 
@@ -17,7 +17,7 @@ all: test-c \
      test-mem \
      test-macro \
      test-scanf \
-     test-multithread.c
+     test-multithread
 
 test-multithread: test-multithread.o
 	$(CC) $(CFLAGS) $(?) -o $(@) $(LIBSTDC)
@@ -62,7 +62,7 @@ test-scanf.o: test-scanf.c
 	$(CC) $(CFLAGS) -c $(?) -o $(@)
 
 clean:
-	@rm -rf *.o *.exe test-c test-objc test-printf test-mem test-macro test-scanf
+	@rm -rf *.o *.exe test-c test-objc test-printf test-mem test-macro test-scanf test-multithread
 
 cleano:
 	@rm -rf *.o
